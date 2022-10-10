@@ -16,7 +16,11 @@ This is going to be a readme about not only the challenge but also my learning a
 - They need to be different type of questions
 - Highlight when mouse is over box for options
 - Determine screen dimensions for quiz
+<img src = "/assets/images/quest-1.jpg" width="25%" height="45%">
+<img src = "/assets/images/quest-2.jpg" width="25%" height="45%">
+
 
 ### Screen type 2. End of quiz results
 
 ### Screen type 3. End quiz enter initial 
+<img src = "/assets/images/end-enter-info.jpg" width="25%" height="45%"> 
