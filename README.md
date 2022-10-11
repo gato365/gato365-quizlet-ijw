@@ -13,7 +13,7 @@ This is going to be a readme about not only the challenge but also my learning a
    -  start quiz button action starts quiz
    -  quiz timer starts 0 and goes to 60 once button is select
 
-
+<img src = "/assets/images/begin-info.jpg" width="35%" height="55%">
 
 ### 1. Questions
 
@@ -24,8 +24,8 @@ This is going to be a readme about not only the challenge but also my learning a
    -  quiz timer countdown from 60
 
 
-<img src = "/assets/images/quest-1.jpg" width="25%" height="45%">
-<img src = "/assets/images/quest-2.jpg" width="25%" height="45%">
+<img src = "/assets/images/quest-1.jpg" width="35%" height="55%">
+<img src = "/assets/images/quest-2.jpg" width="35%" height="55%">
 
 
 Notes:
@@ -44,11 +44,13 @@ Notes:
    - submit button action enters initials into high score list
    - quiz timer
 
-
+<img src = "/assets/images/end-enter-info.jpg" width="35%" height="55%">
 
 ### 3. High score tab
 
    - ‘Go Back’ button action goes back to previous screen
    - ‘Clear high scores’ button action clears the list
 
-<img src = "/assets/images/end-enter-info.jpg" width="25%" height="45%"> 
+
+<img src = "/assets/images/high-scores.jpg" width="35%" height="55%">
+
