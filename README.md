@@ -7,27 +7,7 @@ This is going to be a readme about not only the challenge but also my learning a
 ## Part 0 - Thinking Through it
 ### Screen type  0. Cover page for quiz
 
-
-### Screen type 1. Questions
-
-- Determine which screens require the timer
-- There needs to be a timer
-- There needs to be attached to see high scores
-- They need to be different type of questions
-- Highlight when mouse is over box for options
-- Determine screen dimensions for quiz
-<img src = "/assets/images/quest-1.jpg" width="25%" height="45%">
-<img src = "/assets/images/quest-2.jpg" width="25%" height="45%">
-
-
-### Screen type 2. End of quiz results
-
-### Screen type 3. End quiz enter initial 
-<img src = "/assets/images/end-enter-info.jpg" width="25%" height="45%"> 
-
-
-
-0. Cover page for quiz
+### 0. Cover page for quiz
    -  view high scores link takes user to high school tab
    -  descriptions text
    -  start quiz button action starts quiz
@@ -35,7 +15,7 @@ This is going to be a readme about not only the challenge but also my learning a
 
 
 
-1. Questions
+### 1. Questions
 
    -  view high scores link takes user to high school tab
    -  question text variable
@@ -54,7 +34,7 @@ Notes:
 - If question is wrong 10 seconds is subtracted 
 
 
-2. End of quiz results
+### 2. End of quiz results
 
    - view high scores link takes user to high school tab
    - ‘All done!’ text
@@ -66,7 +46,7 @@ Notes:
 
 
 
-3. High score tab
+### 3. High score tab
 
    - ‘Go Back’ button action goes back to previous screen
    - ‘Clear high scores’ button action clears the list
