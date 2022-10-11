@@ -14,7 +14,13 @@
     text-align: center;
 }
 
-#start-quiz
+#start-quiz{
+    background-color: #9f12a9;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center; 
+}
 
 
 
