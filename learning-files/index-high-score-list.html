@@ -3,35 +3,60 @@
 
 <head>
     <style>
+        .high-score-containter {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+            text-align: left;
+            padding-top: 175px;
+        }
 
-    </style> 
+        .high-score {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        /* Issues: */
+        /* i) Needs to be dynamic based on size of  list */
+        .high-score-list {
+            background-color: rgb(181, 160, 200);
+            width: 275px;
+        }
+
+        .button {
+            background-color: #9f12a9;
+            border: none;
+            color: white;
+            padding: 10px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: auto;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+    </style>
 </head>
 
 
 <body>
 
-<div class = "high-score-containter">
-    <div id = "high-score"> High Scores</div>
-    <!-- Issues: -->
-    <!-- i) Past Initial -->
-    <!-- ii) Past Score -->
-    <div id = "high-score-list"> ______</div>
+    <div class="high-score-containter">
+        <div class="high-score"> High Scores</div>
+        <!-- Issues: -->
+        <!-- i) Past Initial -->
+        <!-- ii) Past Score -->
+        <div class="high-score-list"> ______</div>
 
-    <div class="button-containter">
-        <input type="button" class="button" value="Go Back">
-        <input type="button" class="button" value="Clear high scores">
+        <div class="button-containter">
+            <input type="button" class="button" value="Go Back">
+            <input type="button" class="button" value="Clear high scores">
+        </div>
+
+
     </div>
-
-
-</div>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
