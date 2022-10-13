@@ -1,3 +1,7 @@
+.top-row-container{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 #high-scores{
@@ -7,6 +11,8 @@
     color:#1ca812;
     
 }
+
+
 .first-screen-descrip{
     margin: auto;
     width: 60%;
@@ -38,10 +44,6 @@
 
 
 
-.top-row-container{
-  display: flex;
-  justify-content: space-between;
-}
 
 
 
