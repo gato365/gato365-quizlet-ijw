@@ -3,12 +3,26 @@
 
 <head>
     <style>
+        .top-row-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        #high-scores {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            color: #1ca812;
+
+        }
+
         .enter-info {
             margin: auto;
             width: 60%;
             padding: 10px;
             text-align: left;
-            padding-top: 225px;
+            padding-top: 175px;
         }
 
         #all-done {
@@ -38,6 +52,10 @@
 
 
 <body>
+    <div class="top-row-container">
+        <div id="high-scores"> View High Scores</div>
+        <div class="timer-count">10 </div>
+    </div>
 
     <div class="enter-info">
 
@@ -48,14 +66,14 @@
 
 
 
-        
+
         <div class="performance-info">
             <div> Your final score is__</div>
             <label for="enter-int-info">Enter Initials: </label>
             <input type="text" id="enter-int-info" name="enter-int-info">
             <input type="button" class="button" value="Submit">
         </div>
-        
+
 
     </div>
 
