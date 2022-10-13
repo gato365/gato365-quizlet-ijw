@@ -3,17 +3,37 @@
 
 <head>
     <style>
-        .enter-info{
+        .enter-info {
             margin: auto;
             width: 60%;
             padding: 10px;
             text-align: left;
+            padding-top: 225px;
         }
-        #all-done{
+
+        #all-done {
             font-size: 35px;
             font-weight: bold;
         }
-    </style> 
+
+        .performance-info {
+            font-size: 25px;
+        }
+
+        .button {
+            background-color: #9f12a9;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: auto;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+    </style>
 </head>
 
 
@@ -23,29 +43,22 @@
 
         <!-- Issues: -->
         <!-- i)  place score  -->
-        
-        <div id = "all-done"> All Done!</div>
-        
-   
 
-    <div id = "performance-info">
-        <div> Your final score is__</div>
-        <div class = "enter-initials"> 
+        <div id="all-done"> All Done!</div>
+
+
+
+        <!-- <div class=""> -->
+        <div class="performance-info">
+            <div> Your final score is__</div>
             <label for="enter-int-info">Enter Initials: </label>
             <input type="text" id="enter-int-info" name="enter-int-info">
             <input type="button" class="button" value="Submit">
         </div>
-    </div>
+        <!-- </div> -->
 
     </div>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
