@@ -54,3 +54,19 @@ Notes:
 
 <img src = "/assets/images/high-scores.jpg" width="35%" height="55%">
 
+
+
+## Next Step (10/16/2022)
+Now that I created these pages in different html files, I need to make them functional. Here are my ideas regarding the pages
+
+The below images give all the actions that can occur on the website
+
+<img src = "/assets/images/quiz-diagram.jpg" width="35%" height="55%">
+
+The below image provides insight on the actions to go between every page and the high score.
+
+<img src = "/assets/images/quiz-actions-to-HS.jpg" width="35%" height="55%">
+
+The below image provides insight on the actions that come up on question page or between other page pages
+
+<img src = "/assets/images/quiz-actions-on-pages.jpg" width="35%" height="55%">
