@@ -38,6 +38,10 @@ var timeLeftEL = document.querySelector('.timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
 var stemOfQuestionElement = document.querySelector('#stem-of-question');
+var choice1Element = document.querySelector('#choice1');
+var choice2Element = document.querySelector('#choice2');
+var choice3Element = document.querySelector('#choice3');
+var choice4Element = document.querySelector('#choice4');
 
 
 var timerId; 
@@ -67,8 +71,16 @@ function getNextQuestion(){
     console.log('Get Next Question');
     currentQuestion = questionsList[questionIndex];
     stemOfQuestionElement.innerHTML = currentQuestion.question;
+    choice1Element.innerHTML = currentQuestion.choices[0];
+    choice2Element.innerHTML = currentQuestion.choices[1];
+    choice3Element.innerHTML = currentQuestion.choices[2];
+    choice4Element.innerHTML = currentQuestion.choices[3];
+    // Have to make options random
 }
 
+
+// Wrong Answe Function
+// Corrrect Answer function
 
 
 
