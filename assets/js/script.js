@@ -11,3 +11,14 @@
 //      b) Reduce time
 //      c) Keep all information on one page [CP,Q,HS,LP]
 //      d) ...
+
+
+['Commonly used data types DO Not Include:',
+'The condition in an if / else statement is enclosed with ______.',
+'Arrays in JavaScript can be used to store_______.'
+]
+
+[['1. string','2. booleans','3. alerts','4. numbers'],
+['1. quotes','2. curly brackets','3. parenthesis','4. square brackets'],
+['1. numbers and strings','2. other arrays','3. booleans','4. all of the above']
+]
