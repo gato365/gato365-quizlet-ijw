@@ -59,8 +59,20 @@ var choice4Element = document.querySelector('#choice4');
 
 
 // Get Click by Usert
-var choice1Button = document.querySelectorAll('#choice1, choice2, choice3, choice4');
+// SHould be a function
+var choice1Button = document.getElementById('choice1');
 choice1Button.onclick = choice1selected;
+
+var choice2Button = document.getElementById('choice2');
+choice2Button.onclick = choice2selected;
+
+var choice3Button = document.getElementById('choice3');
+choice3Button.onclick = choice3selected;
+
+var choice4Button = document.getElementById('choice4');
+choice4Button.onclick = choice4selected;
+
+
 
 
 var timerId; 
@@ -112,25 +124,38 @@ function getNextQuestion(){
 }
 
 function choice1selected(){
-    console.log('Choice');
+    console.log('Choice - 1');
+}
+
+function choice2selected(){
+    console.log('Choice - 2');
+}
+
+function choice3selected(){
+    console.log('Choice - 3');
+}
+
+function choice4selected(){
+    console.log('Choice - 4');
 }
 
 
-// Check Answer
-function checkSelection(){
-    console.log('Check answer Answer');
-}
 
-// Wrong Answe Function
-function wrongAnswer(){
-    console.log('Wrong Answer');
-}
+// // Check Answer
+// function checkSelection(){
+//     console.log('Check answer Answer');
+// }
+
+// // Wrong Answe Function
+// function wrongAnswer(){
+//     console.log('Wrong Answer');
+// }
 
 
-// Corrrect Answer function
-function correctAnswer(){
-    console.log('Correct Answer');
-}
+// // Corrrect Answer function
+// function correctAnswer(){
+//     console.log('Correct Answer');
+// }
 
 
 
