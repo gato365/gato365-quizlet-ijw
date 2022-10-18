@@ -46,7 +46,6 @@ var questionsList = [
 
 // 1. Address Button
 var startQuizButton = document.getElementById("start-quiz");
-// startQuizButton.addEventListner
 startQuizButton.onclick = startQuiz;
 
 var timeLeftEL = document.querySelector('.timer-count');
@@ -57,6 +56,11 @@ var choice1Element = document.querySelector('#choice1');
 var choice2Element = document.querySelector('#choice2');
 var choice3Element = document.querySelector('#choice3');
 var choice4Element = document.querySelector('#choice4');
+
+
+// Get Click by Usert
+var choice1Button = document.querySelectorAll('#choice1, choice2, choice3, choice4');
+choice1Button.onclick = choice1selected;
 
 
 var timerId; 
@@ -89,7 +93,7 @@ function getNextQuestion(){
     choice1Element.innerHTML = currentQuestion.choices[0];
     choice2Element.innerHTML = currentQuestion.choices[1];
     choice3Element.innerHTML = currentQuestion.choices[2];
-    choice4Element.innerHTML = curresntQuestion.choices[3];
+    choice4Element.innerHTML = currentQuestion.choices[3];
     // Issue: Have to make options random
 
     // Tasks:
@@ -105,6 +109,10 @@ function getNextQuestion(){
     
     
 
+}
+
+function choice1selected(){
+    console.log('Choice');
 }
 
 
