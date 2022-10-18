@@ -18,16 +18,31 @@ var questionsList = [
         'rightAnswer':  'alerts'
     },
 
-    
-    // 'The condition in an if / else statement is enclosed with ______.',
-    // 'Arrays in JavaScript can be used to store_______.'
+   {
+    'question': 'The condition in an if / else statement is enclosed with ______.',
+    'choices':  ['quotes','curly brackets','parenthesis','square brackets'],
+    'rightAnswer': 'curly brackets'  
+   },
+   {
+    'question': 'Arrays in JavaScript can be used to store_______.',
+    'choices':  ['numbers and strings','other arrays','booleans','all of the above'],
+    'rightAnswer': 'all of the above'  
+   },
+   {
+    'question': 'String values must be enclosed within _____ when being assigned to variables',
+    'choices':  ['commas','curly bracket','quotes','parenthesis'],
+    'rightAnswer': 'quotes'  
+   },
+   {
+    'question': 'A very useful tool used during development and debugging for printing content to the debugger is:',
+    'choices':  ['JavaScript','terminal/bash','for loops','console.log'],
+    'rightAnswer': 'console.log'  
+   },
+
+ 
 ]
 
-// var questionsChoices = [
-// ,
-// ['1. quotes','2. curly brackets','3. parenthesis','4. square brackets'],
-// ['1. numbers and strings','2. other arrays','3. booleans','4. all of the above']
-// ]
+
 
 // 1. Address Button
 var startQuizButton = document.getElementById("start-quiz");
