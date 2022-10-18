@@ -89,9 +89,20 @@ function getNextQuestion(){
     choice1Element.innerHTML = currentQuestion.choices[0];
     choice2Element.innerHTML = currentQuestion.choices[1];
     choice3Element.innerHTML = currentQuestion.choices[2];
-    choice4Element.innerHTML = currentQuestion.choices[3];
+    choice4Element.innerHTML = curresntQuestion.choices[3];
     // Issue: Have to make options random
 
+    // Tasks:
+    // What did the user select? () --> use console.log to print it first
+    // Check the user's choice with correct solution. --> Use if statement
+    // If wrong, say wrong and add time to clock
+    // If right, say correct and proceed to next question
+    // Create While loop based on the following conditions - all questions are done or time runs out
+    // Hide Page and show enter Last page
+    // Top score list** 
+
+
+    
     
 
 }
