@@ -1,0 +1,9 @@
+1. How to go from image to program -  the idea is based on what I am asked to do and the code is nice but different
+
+   - What I am asked to do
+   - The image  
+   - The Code
+   - The finish produce
+
+2. How a student criticized my code and how it helped me be a better programmer
+

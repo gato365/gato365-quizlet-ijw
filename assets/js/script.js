@@ -90,13 +90,16 @@ function getNextQuestion(){
     choice2Element.innerHTML = currentQuestion.choices[1];
     choice3Element.innerHTML = currentQuestion.choices[2];
     choice4Element.innerHTML = currentQuestion.choices[3];
-    // Have to make options random
+    // Issue: Have to make options random
+
+    
+
 }
 
 
 // Check Answer
 function checkSelection(){
-
+    console.log('Check answer Answer');
 }
 
 // Wrong Answe Function
