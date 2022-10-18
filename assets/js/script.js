@@ -94,12 +94,41 @@ function getNextQuestion(){
 }
 
 
+// Check Answer
+function checkSelection(){
+
+}
+
 // Wrong Answe Function
+function wrongAnswer(){
+    console.log('Wrong Answer');
+}
+
+
 // Corrrect Answer function
+function correctAnswer(){
+    console.log('Correct Answer');
+}
+
+
+
+// Author: 
+// Date Created:
+// Date Modified: 
+// Name: 
+// Purpose:
+// Input:
+// Output:
+// Notes:
 
 
 
 
+
+//  (will not use)Random Set of Numbers not in order
+let array = [1, 2, 3, 4, 5, 6];
+const randomValue = array[Math.floor(Math.random() * array.length)];
+console.log(randomValue)
 
 
 
