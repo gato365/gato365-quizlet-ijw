@@ -1,12 +1,6 @@
 // Create Questions that will be asked
 
 
-
-
-
-
-
-// },
 const Questions = [{
 		questionId: 0,
 		questionStem: 'Commonly used data types DO Not Include:',
@@ -70,71 +64,71 @@ var start = true;
 function iterate(id) {
 
 	// Getting the result display section
-	var result = document.getElementsByClassName("result");
+	var result = document.getElementsByClassName("entire-question");
 	result[0].innerText = "";
 
 	// Getting the question
-	const question = document.getElementById("question");
+	const question = document.getElementById("stem-of-question");
 
 
 	// Setting the question text
 	question.innerText = Questions[questionId].questionStem;
 
 	// Getting the options
-	const op1 = document.getElementById('op1');
-	const op2 = document.getElementById('op2');
-	const op3 = document.getElementById('op3');
-	const op4 = document.getElementById('op4');
+	const choice1 = document.getElementById('choice1');
+	const choice2 = document.getElementById('choice2');
+	const choice3 = document.getElementById('choice3');
+	const choice4 = document.getElementById('choice4');
 
 
 	// Providing option text
-	op1.innerText = Questions[id].questionSolution[0].text;
-	op2.innerText = Questions[id].questionSolution[1].text;
-	op3.innerText = Questions[id].questionSolution[2].text;
-	op4.innerText = Questions[id].questionSolution[3].text;
+	choice1.innerText = Questions[id].questionSolution[0].text;
+	choice2.innerText = Questions[id].questionSolution[1].text;
+	choice3.innerText = Questions[id].questionSolution[2].text;
+	choice4.innerText = Questions[id].questionSolution[3].text;
 
 	// Providing the true or false value to the options
-	op1.value = Questions[questionId].questionSolution[0].isCorrect;
-	op2.value = Questions[questionId].questionSolution[1].isCorrect;
-	op3.value = Questions[questionId].questionSolution[2].isCorrect;
-	op4.value = Questions[questionId].questionSolution[3].isCorrect;
+	choice1.value = Questions[questionId].questionSolution[0].isCorrect;
+	choice2.value = Questions[questionId].questionSolution[1].isCorrect;
+	choice3.value = Questions[questionId].questionSolution[2].isCorrect;
+	choice4.value = Questions[questionId].questionSolution[3].isCorrect;
 
 	var selected = "";
 
-	// Show selection for op1
-	op1.addEventListener("click", () => {
-		op1.style.backgroundColor = "lightgoldenrodyellow";
-		op2.style.backgroundColor = "lightskyblue";
-		op3.style.backgroundColor = "lightskyblue";
-		op4.style.backgroundColor = "lightskyblue";
-		selected = op1.value;
+	// Show selection for choice1
+	choice1.addEventListener("click", () => {
+		choice1.style.backgroundColor = "lightgoldenrodyellow";
+		choice2.style.backgroundColor = "lightskyblue";
+		choice3.style.backgroundColor = "lightskyblue";
+		choice4.style.backgroundColor = "lightskyblue";
+		selected = choice1.value;
 	})
 
-	// Show selection for op2
-	op2.addEventListener("click", () => {
-		op1.style.backgroundColor = "lightskyblue";
-		op2.style.backgroundColor = "lightgoldenrodyellow";
-		op3.style.backgroundColor = "lightskyblue";
-		op4.style.backgroundColor = "lightskyblue";
-		selected = op2.value;
+	// Show selection for choice2
+	choice2.addEventListener("click", () => {
+		choice1.style.backgroundColor = "lightskyblue";
+		choice2.style.backgroundColor = "lightgoldenrodyellow";
+		choice3.style.backgroundColor = "lightskyblue";
+		choice4.style.backgroundColor = "lightskyblue";
+		selected = choice2.value;
 	})
 
-	// Show selection for op3
-	op3.addEventListener("click", () => {
-		op1.style.backgroundColor = "lightskyblue";
-		op2.style.backgroundColor = "lightskyblue";
-		op3.style.backgroundColor = "lightgoldenrodyellow";
-		op4.style.backgroundColor = "lightskyblue";
-		selected = op3.value;
+	// Show selection for choice3
+	choice3.addEventListener("click", () => {
+		choice1.style.backgroundColor = "lightskyblue";
+		choice2.style.backgroundColor = "lightskyblue";
+		choice3.style.backgroundColor = "lightgoldenrodyellow";
+		choice4.style.backgroundColor = "lightskyblue";
+		selected = choice3.value;
 	})
 
-	// Show selection for op4
-	op4.addEventListener("click", () => {
-		op1.style.backgroundColor = "lightskyblue";
-		op2.style.backgroundColor = "lightskyblue";
-		op3.style.backgroundColor = "lightskyblue";
-		op4.style.backgroundColor = "lightgoldenrodyellow";
-		selected = op4.value;
+	// Show selection for choice4
+	choice4.addEventListener("click", () => {
+		choice1.style.backgroundColor = "lightskyblue";
+		choice2.style.backgroundColor = "lightskyblue";
+		choice3.style.backgroundColor = "lightskyblue";
+		choice4.style.backgroundColor = "lightgoldenrodyellow";
+		selected = choice4.value;
 	})
 
 	// Grabbing the evaluate button
