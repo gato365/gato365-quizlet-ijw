@@ -1,8 +1,16 @@
 // Create Questions that will be asked
+
+
+
+
+
+
+
+// },
 const Questions = [{
-		id: 0,
+		questionId: 0,
 		questionStem: 'Commonly used data types DO Not Include:',
-		a: [{ text: 'string', isCorrect: false },
+		questionSolution: [{ text: 'string', isCorrect: false },
 			{ text: 'booleans', isCorrect: false },
 			{ text: 'alerts', isCorrect: true },
 			{ text: 'numbers', isCorrect: false }
@@ -10,9 +18,9 @@ const Questions = [{
 
 	},
 	{
-		id: 1,
+		questionId: 1,
 		questionStem: 'The condition in an if / else statement is enclosed with ______.',
-		a: [{ text: 'square brackets', isCorrect: false },
+		questionSolution: [{ text: 'square brackets', isCorrect: false },
 			{ text: 'parenthesis', isCorrect: false },
 			{ text: 'quotes', isCorrect: false },
 			{ text: 'curly brackets', isCorrect: true }
@@ -20,31 +28,31 @@ const Questions = [{
 
 	},
 	{
-		id: 2,
+		questionId: 2,
 		questionStem: 'Arrays in JavaScript can be used to store_______.',
-		a: [{ text: 'booleans', isCorrect: false },
+		questionSolution: [{ text: 'booleans', isCorrect: false },
 			{ text: 'other arrays', isCorrect: false },
 			{ text: 'all of these options', isCorrect: true },
 			{ text: 'numbers and strings', isCorrect: false }
 		]
 
-	}
+	},
 
 	{
-		id: 3,
+		questionId: 3,
 		questionStem: 'String values must be enclosed within _____ when being assigned to variables',
-		a: [{ text: 'commas', isCorrect: false },
+		questionSolution: [{ text: 'commas', isCorrect: false },
 			{ text: 'curly bracket', isCorrect: false },
 			{ text: 'quotes', isCorrect: true },
 			{ text: 'parenthesis', isCorrect: false }
 		]
 
-	}
+	},
 
 	{
-		id: 4,
+		questionId: 4,
 		questionStem: 'A very useful tool used during development and debugging for printing content to the debugger is:',
-		a: [{ text: 'JavaScript', isCorrect: false },
+		questionSolution: [{ text: 'JavaScript', isCorrect: false },
 			{ text: 'for loops', isCorrect: false },
 			{ text: 'console.log', isCorrect: true },
 			{ text: 'terminal/bash', isCorrect: false }
@@ -70,7 +78,7 @@ function iterate(id) {
 
 
 	// Setting the question text
-	question.innerText = Questions[id].q;
+	question.innerText = Questions[questionId].questionStem;
 
 	// Getting the options
 	const op1 = document.getElementById('op1');
@@ -80,16 +88,16 @@ function iterate(id) {
 
 
 	// Providing option text
-	op1.innerText = Questions[id].a[0].text;
-	op2.innerText = Questions[id].a[1].text;
-	op3.innerText = Questions[id].a[2].text;
-	op4.innerText = Questions[id].a[3].text;
+	op1.innerText = Questions[id].questionSolution[0].text;
+	op2.innerText = Questions[id].questionSolution[1].text;
+	op3.innerText = Questions[id].questionSolution[2].text;
+	op4.innerText = Questions[id].questionSolution[3].text;
 
 	// Providing the true or false value to the options
-	op1.value = Questions[id].a[0].isCorrect;
-	op2.value = Questions[id].a[1].isCorrect;
-	op3.value = Questions[id].a[2].isCorrect;
-	op4.value = Questions[id].a[3].isCorrect;
+	op1.value = Questions[questionId].questionSolution[0].isCorrect;
+	op2.value = Questions[questionId].questionSolution[1].isCorrect;
+	op3.value = Questions[questionId].questionSolution[2].isCorrect;
+	op4.value = Questions[questionId].questionSolution[3].isCorrect;
 
 	var selected = "";
 
@@ -150,14 +158,14 @@ if (start) {
 
 // Next button and method
 const next = document.getElementsByClassName('next')[0];
-var id = 0;
+var questionId = 0;
 
 next.addEventListener("click", () => {
 	start = false;
-	if (id < 2) {
-		id++;
-		iterate(id);
-		console.log(id);
+	if (questionId < 2) {
+		questionId++;
+		iterate(questionId);
+		console.log(questionId);
 	}
 
 })
