@@ -1,6 +1,29 @@
 // Create Questions that will be asked
 
 
+
+var startQuizButton = document.getElementById("start-quiz");
+startQuizButton.onclick = startQuiz;
+
+var timeLeftEL = document.querySelector('.timer-count');
+
+function startQuiz(){
+    console.log('Start Quiz');
+    startDescriptionElement.setAttribute('class','hide-me');
+    entireQuestionElement.removeAttribute('class','hide-me');
+    // Start Timer
+    timerId = setInterval(timerFunction,1000);
+    timeLeftEL.innerHTML = 'time-left: ' + timeLeft;
+    // Populate Next Question
+    getNextQuestion();
+}
+
+
+function timerFunction(){
+    timeLeft--;
+    timeLeftEL.innerHTML = 'time-left: ' + timeLeft;
+}
+
 const Questions = [{
 		questionId: 0,
 		questionStem: 'Commonly used data types DO Not Include:',
