@@ -48,6 +48,10 @@
     display: none;
   }
 
+  .hide-eval{
+    display: none;
+  }
+
 
   .top-row-container {
     display: flex;

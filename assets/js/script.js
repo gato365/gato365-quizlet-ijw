@@ -52,6 +52,11 @@ var timeLeftEL = document.querySelector('.timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
 var stemOfQuestionElement = document.querySelector('#stem-of-question');
+
+
+
+
+
 var choice1Element = document.querySelector('#choice1');
 var choice2Element = document.querySelector('#choice2');
 var choice3Element = document.querySelector('#choice3');
@@ -59,18 +64,18 @@ var choice4Element = document.querySelector('#choice4');
 
 
 // Get Click by Usert
-// SHould be a function
-var choice1Button = document.getElementById('choice1');
-choice1Button.onclick = choice1selected;
+// Should be a function
+// var choice1Button = document.getElementById('choice1');
+// choice1Button.onclick = choice1selected;
 
-var choice2Button = document.getElementById('choice2');
-choice2Button.onclick = choice2selected;
+// var choice2Button = document.getElementById('choice2');
+// choice2Button.onclick = choice2selected;
 
-var choice3Button = document.getElementById('choice3');
-choice3Button.onclick = choice3selected;
+// var choice3Button = document.getElementById('choice3');
+// choice3Button.onclick = choice3selected;
 
-var choice4Button = document.getElementById('choice4');
-choice4Button.onclick = choice4selected;
+// var choice4Button = document.getElementById('choice4');
+// choice4Button.onclick = choice4selected;
 
 
 
@@ -123,21 +128,33 @@ function getNextQuestion(){
 
 }
 
-function choice1selected(){
-    console.log('Choice - 1');
-}
 
-function choice2selected(){
-    console.log('Choice - 2');
-}
+choice1Element.addEventListener("click", function() {
+    console.log('button 1')
+  });
 
-function choice3selected(){
-    console.log('Choice - 3');
-}
 
-function choice4selected(){
-    console.log('Choice - 4');
-}
+
+
+
+
+
+// function choice1selected(){
+//     console.log('Choice - 1');
+// 	console.log( currentQuestion.choices[0]);
+// }
+
+// function choice2selected(){
+//     console.log('Choice - 2');
+// }
+
+// function choice3selected(){
+//     console.log('Choice - 3');
+// }
+
+// function choice4selected(){
+//     console.log('Choice - 4');
+// }
 
 
 
