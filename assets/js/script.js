@@ -84,6 +84,8 @@ var timerId;
 var timeLeft = 120;
 var currentQuestion;
 var questionIndex = 0;
+var selectedChoice;
+var evaluateChoice = document.querySelector("#eval");
 
 function startQuiz(){
     console.log('Start Quiz');
@@ -130,7 +132,9 @@ function getNextQuestion(){
 
 
 choice1Element.addEventListener("click", function() {
-    console.log('button 1')
+    // console.log('button 1')
+    selectedChoice = currentQuestion.choices[0];
+    console.log(selectedChoice)
   });
 
 
