@@ -85,7 +85,7 @@ var timerId;
 var timeLeft = 120;
 var currentQuestion;
 var questionIndex = 0;
-var selectedChoice = '';
+var selectedChoice = ' ';
 var evaluateChoice = document.querySelector("#eval");
 
 function startQuiz() {
@@ -116,13 +116,15 @@ function getNextQuestion() {
     choice3Element.innerHTML = currentQuestion.choices[3];
     // Issue: Have to make options random
 
-    if (selectedChoice == currentQuestion.rightAnswer) {
-        evalUserChoice.setAttribute('id', 'correct-eval');
-        evalUserChoice.removeAttribute('id', 'correct-eval');
-    } else{
-        evalUserChoice.setAttribute('id', 'incorrect-eval');
-        evalUserChoice.removeAttribute('id', 'incorrect-eval');   
-    }
+
+    console.log(selectedChoice);
+    // if (selectedChoice == currentQuestion.rightAnswer) {
+    //     evalUserChoice.setAttribute('id', 'correct-eval');
+    //     evalUserChoice.removeAttribute('id', 'correct-eval');
+    // } else{
+    //     evalUserChoice.setAttribute('id', 'incorrect-eval');
+    //     evalUserChoice.removeAttribute('id', 'incorrect-eval');   
+    // }
 
     // Tasks:
     // What did the user select? () --> use console.log to print it first
@@ -142,25 +144,27 @@ function getNextQuestion() {
 
 choice0Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[0];
-    console.log(selectedChoice);
-
+    // console.log(selectedChoice);
+    getNextQuestion();
 });
 
 choice1Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[1];
-    console.log(selectedChoice);
-
+    // console.log(selectedChoice);
+    getNextQuestion();
 });
 
 
 choice2Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[2];
-    console.log(selectedChoice);
+    // console.log(selectedChoice);
+    getNextQuestion();
 });
 
 choice3Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[3];
-    console.log(selectedChoice);
+    // console.log(selectedChoice);
+    getNextQuestion();
 });
 
 
