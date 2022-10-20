@@ -1,16 +1,3 @@
-
-
-
-// Use 
-// Use Activity 10, 12 from Web APIs to make timers
-// Use Activity 18 from Web APIs to go through questions
-// USe Activity 20 from Web APIs to click on multiple choice questions
-// Use Activity 22 from Web APIs to make high score list
-// Use Mini Project from Web APIs to do the following
-//      a) Start button
-//      b) Reduce time
-//      c) Keep all information on one page [CP,Q,HS,LP]
-//      d) ...
 var questionsList = [
     {
         'question': 'Commonly used data types DO Not Include:',
@@ -104,15 +91,17 @@ function getNextQuestion() {
     // Issue: Have to make options random
 
 
-   
+    console.log('Issue');
     if (selectedChoice == currentQuestion.rightAnswer) {  
         evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
         questionIndex++;
+        selectedChoice = ' ';
         getNextQuestion();
-        console.log('Next')
+        console.log('Next');
     } else if (selectedChoice  != ' ') {
         evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');   
         questionIndex++;
+        selectedChoice = ' ';
         getNextQuestion();
     } 
 
