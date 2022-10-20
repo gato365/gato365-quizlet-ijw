@@ -64,19 +64,6 @@ var choice2Element = document.querySelector('#choice3');
 var choice3Element = document.querySelector('#choice4');
 
 
-// Get Click by Usert
-// Should be a function
-// var choice1Button = document.getElementById('choice1');
-// choice1Button.onclick = choice1selected;
-
-// var choice2Button = document.getElementById('choice2');
-// choice2Button.onclick = choice2selected;
-
-// var choice3Button = document.getElementById('choice3');
-// choice3Button.onclick = choice3selected;
-
-// var choice4Button = document.getElementById('choice4');
-// choice4Button.onclick = choice4selected;
 
 
 
@@ -86,8 +73,8 @@ var timeLeft = 120;
 var currentQuestion;
 var questionIndex = 0;
 var selectedChoice = ' ';
-var evaluateChoice = document.querySelector("#eval");
-
+var evaluateChoiceCorrect = document.querySelector(".correct-eval");
+var evaluateChoiceIncorrect = document.querySelector(".incorrect-eval");
 function startQuiz() {
     console.log('Start Quiz');
     startDescriptionElement.setAttribute('class', 'hide-me');
@@ -107,7 +94,7 @@ function timerFunction() {
 
 
 function getNextQuestion() {
-    console.log('Get Next Question');
+    
     currentQuestion = questionsList[questionIndex];
     stemOfQuestionElement.innerHTML = currentQuestion.question;
     choice0Element.innerHTML = currentQuestion.choices[0];
@@ -117,14 +104,12 @@ function getNextQuestion() {
     // Issue: Have to make options random
 
 
-    console.log(selectedChoice);
-    // if (selectedChoice == currentQuestion.rightAnswer) {
-    //     evalUserChoice.setAttribute('id', 'correct-eval');
-    //     evalUserChoice.removeAttribute('id', 'correct-eval');
-    // } else{
-    //     evalUserChoice.setAttribute('id', 'incorrect-eval');
-    //     evalUserChoice.removeAttribute('id', 'incorrect-eval');   
-    // }
+   
+    if (selectedChoice == currentQuestion.rightAnswer) {  
+        evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
+    } else if (selectedChoice  != ' ') {
+        evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');   
+    } 
 
     // Tasks:
     // What did the user select? () --> use console.log to print it first
@@ -144,26 +129,22 @@ function getNextQuestion() {
 
 choice0Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[0];
-    // console.log(selectedChoice);
     getNextQuestion();
 });
 
 choice1Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[1];
-    // console.log(selectedChoice);
     getNextQuestion();
 });
 
 
 choice2Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[2];
-    // console.log(selectedChoice);
     getNextQuestion();
 });
 
 choice3Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[3];
-    // console.log(selectedChoice);
     getNextQuestion();
 });
 
