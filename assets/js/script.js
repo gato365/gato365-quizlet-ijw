@@ -11,35 +11,35 @@
 //      b) Reduce time
 //      c) Keep all information on one page [CP,Q,HS,LP]
 //      d) ...
-var questionsList = [ 
+var questionsList = [
     {
         'question': 'Commonly used data types DO Not Include:',
-        'choices':['string','booleans','alerts','numbers'],
-        'rightAnswer':  'alerts'
+        'choices': ['string', 'booleans', 'alerts', 'numbers'],
+        'rightAnswer': 'alerts'
     },
 
-   {
-    'question': 'The condition in an if / else statement is enclosed with ______.',
-    'choices':  ['quotes','curly brackets','parenthesis','square brackets'],
-    'rightAnswer': 'curly brackets'  
-   },
-   {
-    'question': 'Arrays in JavaScript can be used to store_______.',
-    'choices':  ['numbers and strings','other arrays','booleans','all of the above'],
-    'rightAnswer': 'all of the above'  
-   },
-   {
-    'question': 'String values must be enclosed within _____ when being assigned to variables',
-    'choices':  ['commas','curly bracket','quotes','parenthesis'],
-    'rightAnswer': 'quotes'  
-   },
-   {
-    'question': 'A very useful tool used during development and debugging for printing content to the debugger is:',
-    'choices':  ['JavaScript','terminal/bash','for loops','console.log'],
-    'rightAnswer': 'console.log'  
-   },
+    {
+        'question': 'The condition in an if / else statement is enclosed with ______.',
+        'choices': ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
+        'rightAnswer': 'curly brackets'
+    },
+    {
+        'question': 'Arrays in JavaScript can be used to store_______.',
+        'choices': ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+        'rightAnswer': 'all of the above'
+    },
+    {
+        'question': 'String values must be enclosed within _____ when being assigned to variables',
+        'choices': ['commas', 'curly bracket', 'quotes', 'parenthesis'],
+        'rightAnswer': 'quotes'
+    },
+    {
+        'question': 'A very useful tool used during development and debugging for printing content to the debugger is:',
+        'choices': ['JavaScript', 'terminal/bash', 'for loops', 'console.log'],
+        'rightAnswer': 'console.log'
+    },
 
- 
+
 ]
 
 
@@ -52,15 +52,16 @@ var timeLeftEL = document.querySelector('.timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
 var stemOfQuestionElement = document.querySelector('#stem-of-question');
+var evalUserChoice = document.querySelector('.hide-eval');
 
 
 
 
 
-var choice1Element = document.querySelector('#choice1');
-var choice2Element = document.querySelector('#choice2');
-var choice3Element = document.querySelector('#choice3');
-var choice4Element = document.querySelector('#choice4');
+var choice0Element = document.querySelector('#choice1');
+var choice1Element = document.querySelector('#choice2');
+var choice2Element = document.querySelector('#choice3');
+var choice3Element = document.querySelector('#choice4');
 
 
 // Get Click by Usert
@@ -80,40 +81,48 @@ var choice4Element = document.querySelector('#choice4');
 
 
 
-var timerId; 
+var timerId;
 var timeLeft = 120;
 var currentQuestion;
 var questionIndex = 0;
-var selectedChoice;
+var selectedChoice = '';
 var evaluateChoice = document.querySelector("#eval");
 
-function startQuiz(){
+function startQuiz() {
     console.log('Start Quiz');
-    startDescriptionElement.setAttribute('class','hide-me');
-    entireQuestionElement.removeAttribute('class','hide-me');
+    startDescriptionElement.setAttribute('class', 'hide-me');
+    entireQuestionElement.removeAttribute('class', 'hide-me');
     // Start Timer
-    timerId = setInterval(timerFunction,1000);
+    timerId = setInterval(timerFunction, 1000);
     timeLeftEL.innerHTML = 'time-left: ' + timeLeft;
     // Populate Next Question
     getNextQuestion();
 }
 
 
-function timerFunction(){
+function timerFunction() {
     timeLeft--;
     timeLeftEL.innerHTML = 'time-left: ' + timeLeft;
 }
 
 
-function getNextQuestion(){
+function getNextQuestion() {
     console.log('Get Next Question');
     currentQuestion = questionsList[questionIndex];
     stemOfQuestionElement.innerHTML = currentQuestion.question;
-    choice1Element.innerHTML = currentQuestion.choices[0];
-    choice2Element.innerHTML = currentQuestion.choices[1];
-    choice3Element.innerHTML = currentQuestion.choices[2];
-    choice4Element.innerHTML = currentQuestion.choices[3];
+    choice0Element.innerHTML = currentQuestion.choices[0];
+    choice1Element.innerHTML = currentQuestion.choices[1];
+    choice2Element.innerHTML = currentQuestion.choices[2];
+    choice3Element.innerHTML = currentQuestion.choices[3];
     // Issue: Have to make options random
+
+    if (selectedChoice == currentQuestion.rightAnswer) {
+        evalUserChoice.setAttribute('id', 'correct-eval');
+        evalUserChoice.removeAttribute('id', 'correct-eval');
+    } else{
+        evalUserChoice.setAttribute('id', 'incorrect-eval');
+        evalUserChoice.removeAttribute('id', 'incorrect-eval');   
+    }
 
     // Tasks:
     // What did the user select? () --> use console.log to print it first
@@ -125,61 +134,39 @@ function getNextQuestion(){
     // Top score list** 
 
 
-    
-    
+
+
 
 }
 
 
-choice1Element.addEventListener("click", function() {
-    // console.log('button 1')
+choice0Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[0];
-    console.log(selectedChoice)
-  });
+    console.log(selectedChoice);
+
+});
+
+choice1Element.addEventListener("click", function () {
+    selectedChoice = currentQuestion.choices[1];
+    console.log(selectedChoice);
+
+});
+
+
+choice2Element.addEventListener("click", function () {
+    selectedChoice = currentQuestion.choices[2];
+    console.log(selectedChoice);
+});
+
+choice3Element.addEventListener("click", function () {
+    selectedChoice = currentQuestion.choices[3];
+    console.log(selectedChoice);
+});
 
 
 
 
-
-
-
-// function choice1selected(){
-//     console.log('Choice - 1');
-// 	console.log( currentQuestion.choices[0]);
-// }
-
-// function choice2selected(){
-//     console.log('Choice - 2');
-// }
-
-// function choice3selected(){
-//     console.log('Choice - 3');
-// }
-
-// function choice4selected(){
-//     console.log('Choice - 4');
-// }
-
-
-
-// // Check Answer
-// function checkSelection(){
-//     console.log('Check answer Answer');
-// }
-
-// // Wrong Answe Function
-// function wrongAnswer(){
-//     console.log('Wrong Answer');
-// }
-
-
-// // Corrrect Answer function
-// function correctAnswer(){
-//     console.log('Correct Answer');
-// }
-
-
-
+// -----------------Function Definitions--------------------
 // Author: 
 // Date Created:
 // Date Modified: 
@@ -188,15 +175,11 @@ choice1Element.addEventListener("click", function() {
 // Input:
 // Output:
 // Notes:
+// -----------------Function Definitions--------------------
 
 
 
 
-
-//  (will not use)Random Set of Numbers not in order
-let array = [1, 2, 3, 4, 5, 6];
-const randomValue = array[Math.floor(Math.random() * array.length)];
-console.log(randomValue)
 
 
 
