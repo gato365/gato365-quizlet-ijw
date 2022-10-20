@@ -107,8 +107,13 @@ function getNextQuestion() {
    
     if (selectedChoice == currentQuestion.rightAnswer) {  
         evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
+        questionIndex++;
+        getNextQuestion();
+        console.log('Next')
     } else if (selectedChoice  != ' ') {
         evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');   
+        questionIndex++;
+        getNextQuestion();
     } 
 
     // Tasks:
