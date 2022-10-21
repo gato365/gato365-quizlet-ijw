@@ -56,7 +56,7 @@ var choice3Element = document.querySelector('#choice4');
 
 
 var timerId;
-var timeLeft = 120;
+var timeLeft = 60;
 var currentQuestion;
 var questionIndex = 0;
 var selectedChoice = ' ';
@@ -76,7 +76,7 @@ function startQuiz() {
 
 function timerFunction() {
     timeLeft--;
-    timeLeftEL.innerHTML = 'time-left: ' + timeLeft;
+    timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
 }
 
 
@@ -84,10 +84,10 @@ function getNextQuestion() {
 
     currentQuestion = questionsList[questionIndex];
     stemOfQuestionElement.innerHTML = currentQuestion.question;
-    choice0Element.innerHTML = currentQuestion.choices[0];
-    choice1Element.innerHTML = currentQuestion.choices[1];
-    choice2Element.innerHTML = currentQuestion.choices[2];
-    choice3Element.innerHTML = currentQuestion.choices[3];
+    choice0Element.innerHTML = '1. ' + currentQuestion.choices[0];
+    choice1Element.innerHTML = '2. ' + currentQuestion.choices[1];
+    choice2Element.innerHTML = '3. ' + currentQuestion.choices[2];
+    choice3Element.innerHTML = '4. ' + currentQuestion.choices[3];
     // Issue: Have to make options random
 
 
