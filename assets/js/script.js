@@ -29,7 +29,7 @@ var questionsList = [
 
 ]
 
-
+let totalQuesNum = questionsList.length;
 
 // 1. Address Button
 var startQuizButton = document.getElementById("start-quiz");
@@ -40,7 +40,7 @@ var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
 var stemOfQuestionElement = document.querySelector('#stem-of-question');
 var evalUserChoice = document.querySelector('.hide-eval');
-
+var displayFinalPage = document.querySelector('.enter-info');
 
 
 
@@ -81,7 +81,7 @@ function timerFunction() {
 
 
 function getNextQuestion() {
-    
+
     currentQuestion = questionsList[questionIndex];
     stemOfQuestionElement.innerHTML = currentQuestion.question;
     choice0Element.innerHTML = currentQuestion.choices[0];
@@ -91,19 +91,29 @@ function getNextQuestion() {
     // Issue: Have to make options random
 
 
-    console.log('Issue');
-    if (selectedChoice == currentQuestion.rightAnswer) {  
-        evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
-        questionIndex++;
-        selectedChoice = ' ';
-        getNextQuestion();
-        console.log('Next');
-    } else if (selectedChoice  != ' ') {
-        evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');   
-        questionIndex++;
-        selectedChoice = ' ';
-        getNextQuestion();
-    } 
+
+
+
+    if (questionIndex <= totalQuesNum) {
+        if (selectedChoice == currentQuestion.rightAnswer) {
+            evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
+            questionIndex++;
+            selectedChoice = ' ';
+            getNextQuestion();
+            evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
+        } else if (selectedChoice != ' ') {
+            evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');
+
+            questionIndex++;
+            selectedChoice = ' ';
+
+            getNextQuestion();
+            evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
+        }
+    } else {
+        console.log('DONE');
+        displayFinalPage.setAttribute('class', 'enter-info');
+    }
 
     // Tasks:
     // What did the user select? () --> use console.log to print it first
@@ -146,10 +156,10 @@ choice3Element.addEventListener("click", function () {
 
 
 // -----------------Function Definitions--------------------
-// Author: 
+// Author:
 // Date Created:
-// Date Modified: 
-// Name: 
+// Date Modified:
+// Name:
 // Purpose:
 // Input:
 // Output:
