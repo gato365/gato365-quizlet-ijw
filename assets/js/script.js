@@ -62,6 +62,8 @@ var questionIndex = 0;
 var selectedChoice = ' ';
 var evaluateChoiceCorrect = document.querySelector(".correct-eval");
 var evaluateChoiceIncorrect = document.querySelector(".incorrect-eval");
+var finalScore = document.querySelector("#final-score");
+
 function startQuiz() {
     console.log('Start Quiz');
     startDescriptionElement.setAttribute('class', 'hide-me');
@@ -96,13 +98,22 @@ function getNextQuestion() {
 
     if (questionIndex < (totalQuesNum-1)) {
         if (selectedChoice == currentQuestion.rightAnswer) {
+            
+            
+            
             evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
             questionIndex++;
             selectedChoice = ' ';
             evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
             getNextQuestion();
-            
             console.log(questionIndex);
+
+
+
+
+
+
+
         } else if (selectedChoice != ' ' & selectedChoice != currentQuestion.rightAnswer) {
             evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');
 
@@ -119,6 +130,8 @@ function getNextQuestion() {
         evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
         evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
         displayFinalPage.setAttribute('class', 'enter-info');
+
+        finalScore.innerHTML = 'You Score: ' + timeLeft;
     }
 
     // Tasks:
