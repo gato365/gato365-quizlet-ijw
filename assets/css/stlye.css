@@ -1,6 +1,7 @@
 .top-row-container{
   display: flex;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 
@@ -9,6 +10,7 @@
     top: 10px;
     left: 10px;
     color:#1ca812;
+    font-size: 20px;
     
 }
 

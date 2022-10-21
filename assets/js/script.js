@@ -35,7 +35,7 @@ let totalQuesNum = questionsList.length;
 var startQuizButton = document.getElementById("start-quiz");
 startQuizButton.onclick = startQuiz;
 
-var timeLeftEL = document.querySelector('.timer-count');
+var timeLeftEL = document.querySelector('#timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
 var stemOfQuestionElement = document.querySelector('#stem-of-question');
@@ -68,7 +68,7 @@ function startQuiz() {
     entireQuestionElement.removeAttribute('class', 'hide-me');
     // Start Timer
     timerId = setInterval(timerFunction, 1000);
-    timeLeftEL.innerHTML = 'time-left: ' + timeLeft;
+    timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
     // Populate Next Question
     getNextQuestion();
 }
