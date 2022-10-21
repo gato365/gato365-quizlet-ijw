@@ -97,6 +97,8 @@ function getNextQuestion() {
 
 
     if (questionIndex < (totalQuesNum-1)) {
+
+        // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
             
             
@@ -105,6 +107,7 @@ function getNextQuestion() {
             questionIndex++;
             selectedChoice = ' ';
             evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
+            evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
             getNextQuestion();
             console.log(questionIndex);
 
@@ -113,13 +116,14 @@ function getNextQuestion() {
 
 
 
-
+            // Incorrect Answer
         } else if (selectedChoice != ' ' & selectedChoice != currentQuestion.rightAnswer) {
             evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');
-
+            timeLeft = timeLeft - 10;
             questionIndex++;
             selectedChoice = ' ';
             evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
+            evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
             getNextQuestion();
             
             console.log(questionIndex);
