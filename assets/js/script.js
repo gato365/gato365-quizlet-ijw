@@ -94,13 +94,14 @@ function getNextQuestion() {
 
 
 
-    if (questionIndex <= totalQuesNum) {
+    if (questionIndex < (totalQuesNum-1)) {
         if (selectedChoice == currentQuestion.rightAnswer) {
             evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
             questionIndex++;
             selectedChoice = ' ';
             getNextQuestion();
             evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
+            console.log(questionIndex);
         } else if (selectedChoice != ' ') {
             evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');
 
@@ -109,9 +110,13 @@ function getNextQuestion() {
 
             getNextQuestion();
             evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
+            console.log(questionIndex);
         }
     } else {
+        entireQuestionElement.setAttribute('class', 'hide-me');
         console.log('DONE');
+        evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
+        evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
         displayFinalPage.setAttribute('class', 'enter-info');
     }
 
