@@ -99,17 +99,18 @@ function getNextQuestion() {
             evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
             questionIndex++;
             selectedChoice = ' ';
-            getNextQuestion();
             evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
+            getNextQuestion();
+            
             console.log(questionIndex);
-        } else if (selectedChoice != ' ') {
+        } else if (selectedChoice != ' ' & selectedChoice != currentQuestion.rightAnswer) {
             evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');
 
             questionIndex++;
             selectedChoice = ' ';
-
-            getNextQuestion();
             evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
+            getNextQuestion();
+            
             console.log(questionIndex);
         }
     } else {

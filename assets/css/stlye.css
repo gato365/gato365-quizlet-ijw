@@ -103,10 +103,12 @@
     font-size: 25px;
     font-weight: bold;
     padding-top: 30px;
+    /* margin: auto; */
 }
 
 .entire-question {
     padding-top: 175px;
+    margin: auto;
 
 }
 
@@ -115,7 +117,6 @@
     border: none;
     color: white;
     padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -136,7 +137,7 @@
     width: 100px;
     margin: auto;
     padding-top: 10px;
-    text-align: center;
+    text-align: left;
 
 }
 
