@@ -98,7 +98,7 @@ function getNextQuestion() {
 
 
 
-    if (questionIndex <= (totalQuesNum - 1) & timeLeft > 0) {
+    if (questionIndex < totalQuesNum  & timeLeft > 0) {
 
         // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
