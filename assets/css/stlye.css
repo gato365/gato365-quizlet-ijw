@@ -1,4 +1,6 @@
-/* First Page */
+/*                        */
+/*       First Page       */
+/*                        */
 /* 1. Container of Elements of Header*/
 .top-row-container{
   display: flex;
@@ -14,9 +16,6 @@
   left: 10px;
   color: #1ca812;
 }
-
-
-
 
 /* 3. Description on First Page */
 .first-screen-descrip{
@@ -49,7 +48,6 @@
   right: 10px;
 }
 
-
 /* 6. Hidding functionality */
   .hide-me{
     display: none;
@@ -71,6 +69,7 @@
     padding-top: 30px;
     /* margin: auto; */
 }
+
 /* 2. Question CSS */
 .entire-question {
     padding-top: 175px;
@@ -79,11 +78,10 @@
 }
 
 
-
-
 /*                        */
 /*    Choices CSS Code    */
 /*                        */
+
 /* 1. General Choice Container */
 .choice-containter {
   display: flex;
@@ -110,19 +108,16 @@
     text-align: left;
 }
 
-
 /* 3. Hovering Capacity for Choice */
 .choices:hover{
   opacity: 0.5;
 }
 
 
-
-
-
 /*                        */
 /*        Last Page       */
 /*                        */
+
 /* 1. Dimensions of the Entering Information page */
 .enter-info {
   margin: auto;
@@ -132,19 +127,16 @@
   padding-top: 175px;
 }
 
-
 /* 2. All Done Page */
 #all-done {
   font-size: 35px;
   font-weight: bold;
 }
 
-
 /* 3. Displaying Performance */
 .performance-info {
   font-size: 25px;
 }
-
 
 /* 4. Submit Initials  */
 #submit-button {
