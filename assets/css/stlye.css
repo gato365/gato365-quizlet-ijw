@@ -156,3 +156,27 @@
 
 
 
+/*                        */
+/*        High Score      */
+/*                        */
+
+/* 1. High Score Container  */
+.high-score-containter {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: left;
+  padding-top: 175px;
+}
+
+/* 2. High School style  */
+.high-score {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* 3. High score list  */
+.high-score-list {
+  background-color: rgb(181, 160, 200);
+  width: 275px;
+}
