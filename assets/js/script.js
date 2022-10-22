@@ -1,3 +1,4 @@
+// Define Question List
 var questionsList = [
     {
         'question': 'Commonly used data types DO Not Include:',
@@ -28,33 +29,20 @@ var questionsList = [
 
 
 ]
-
+// Define Variables used in script
 let totalQuesNum = questionsList.length;
-
-// 1. Address Button
-var startQuizButton = document.getElementById("start-quiz");
+var startQuizButton = document.querySelector("#start-quiz");
 startQuizButton.onclick = startQuiz;
-
 var timeLeftEL = document.querySelector('#timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
 var stemOfQuestionElement = document.querySelector('#stem-of-question');
 var evalUserChoice = document.querySelector('.hide-eval');
 var displayFinalPage = document.querySelector('.enter-info');
-
-
-
-
 var choice0Element = document.querySelector('#choice1');
 var choice1Element = document.querySelector('#choice2');
 var choice2Element = document.querySelector('#choice3');
 var choice3Element = document.querySelector('#choice4');
-
-
-
-
-
-
 var timerId;
 var timeLeft = 60;
 var currentQuestion;
@@ -62,6 +50,24 @@ var questionIndex = 0;
 var selectedChoice = ' ';
 var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
+
+
+
+
+
+
+
+// -----------------Function Definitions--------------------
+// Author: Immanuel Williams PhD 
+// Date Created: 10/18/2022
+// Date Modified: 10/18/2022
+// Name: startQuiz
+// Purpose: Runs the program
+// Input: NA
+// Output: NA
+// Notes: NA
+// -----------------Function Definitions--------------------
+
 
 function startQuiz() {
     console.log('Start Quiz');
@@ -74,6 +80,17 @@ function startQuiz() {
     getNextQuestion();
 }
 
+// -----------------Function Definitions--------------------
+// Author: Immanuel Williams PhD
+// Date Created: 10/18/2022
+// Date Modified: 10/18/2022
+// Name: timerFunction
+// Purpose: Countdown Timer
+// Input: NA
+// Output: NA
+// Notes: Output changes a global variable
+// -----------------Function Definitions--------------------
+
 
 function timerFunction() {
     timeLeft--;
@@ -84,38 +101,42 @@ function timerFunction() {
 }
 
 
+// -----------------Function Definitions--------------------
+// Author: Immanuel Williams PhD 
+// Date Created: 10/18/2022
+// Date Modified: 10/22/2022
+// Name: getNextQuestion
+// Purpose: Proceed through the quiz
+// Input: NA
+// Output: NA
+// Notes: Trying to make the function go to the last page
+// -----------------Function Definitions--------------------
+
+
 function getNextQuestion() {
 
+
+    // Place Question in HTML code
     currentQuestion = questionsList[questionIndex];
     stemOfQuestionElement.innerHTML = currentQuestion.question;
     choice0Element.innerHTML = '1. ' + currentQuestion.choices[0];
     choice1Element.innerHTML = '2. ' + currentQuestion.choices[1];
     choice2Element.innerHTML = '3. ' + currentQuestion.choices[2];
     choice3Element.innerHTML = '4. ' + currentQuestion.choices[3];
-    // Issue: Have to make options random
 
 
 
-
-
+    // Proceed to Next Question
     if (questionIndex < totalQuesNum  & timeLeft > 0) {
 
         // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
-
-
 
             evaluateChoice.setAttribute('class', 'evaluationOfResponse');
             evaluateChoice.innerHTML = 'Correct';
             questionIndex++;
             selectedChoice = ' ';
             getNextQuestion();
-
-
-
-
-
-
 
             // Incorrect Answer
         } else if (selectedChoice != ' ' & selectedChoice != currentQuestion.rightAnswer) {
@@ -129,6 +150,7 @@ function getNextQuestion() {
 
             console.log(questionIndex);
         }
+        // Quiz is Over
     } else {
        
         entireQuestionElement.setAttribute('class', 'hide-me');
@@ -142,39 +164,27 @@ function getNextQuestion() {
         timeLeft = 0;
         timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
     }
-
-    // Tasks:
-    // What did the user select? () --> use console.log to print it first
-    // Check the user's choice with correct solution. --> Use if statement
-    // If wrong, say wrong and add time to clock
-    // If right, say correct and proceed to next question
-    // Create While loop based on the following conditions - all questions are done or time runs out
-    // Hide Page and show enter Last page
-    // Top score list** 
-
-
-
-
-
 }
 
-
+// Choice 0 for Question
 choice0Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[0];
     getNextQuestion();
 });
 
+// Choice 1 for Question
 choice1Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[1];
     getNextQuestion();
 });
 
-
+// Choice 2 for Question
 choice2Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[2];
     getNextQuestion();
 });
 
+// Choice 3 for Question
 choice3Element.addEventListener("click", function () {
     selectedChoice = currentQuestion.choices[3];
     getNextQuestion();
@@ -182,17 +192,6 @@ choice3Element.addEventListener("click", function () {
 
 
 
-
-// -----------------Function Definitions--------------------
-// Author:
-// Date Created:
-// Date Modified:
-// Name:
-// Purpose:
-// Input:
-// Output:
-// Notes:
-// -----------------Function Definitions--------------------
 
 
 
