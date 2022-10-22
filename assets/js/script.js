@@ -50,6 +50,7 @@ var questionIndex = 0;
 var selectedChoice = ' ';
 var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
+var highScorePage = document.querySelector(".high-score-containter");
 
 
 
@@ -78,6 +79,10 @@ function startQuiz() {
     timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
     // Populate Next Question
     getNextQuestion();
+
+    // WHen submit button is hit
+    displayFinalPage.setAttribute('class', 'hide-me');
+    highScorePage.removeAttribute('class','hide-me');
 }
 
 // -----------------Function Definitions--------------------
