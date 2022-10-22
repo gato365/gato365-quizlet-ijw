@@ -60,8 +60,7 @@ var timeLeft = 60;
 var currentQuestion;
 var questionIndex = 0;
 var selectedChoice = ' ';
-var evaluateChoiceCorrect = document.querySelector(".correct-eval");
-var evaluateChoiceIncorrect = document.querySelector(".incorrect-eval");
+var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
 
 function startQuiz() {
@@ -103,11 +102,10 @@ function getNextQuestion() {
             
             
             
-            evaluateChoiceCorrect.setAttribute('class', 'correct-eval');
+            evaluateChoice.setAttribute('class', 'evaluationOfResponse');
+            evaluateChoice.innerHTML = 'Correct';
             questionIndex++;
             selectedChoice = ' ';
-            evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
-            evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
             getNextQuestion();
             console.log(questionIndex);
 
@@ -118,12 +116,12 @@ function getNextQuestion() {
 
             // Incorrect Answer
         } else if (selectedChoice != ' ' & selectedChoice != currentQuestion.rightAnswer) {
-            evaluateChoiceIncorrect.setAttribute('class', 'incorrect-eval');
+          
+            evaluateChoice.setAttribute('class', 'evaluationOfResponse');
+            evaluateChoice.innerHTML = 'Incorrect';
             timeLeft = timeLeft - 10;
             questionIndex++;
             selectedChoice = ' ';
-            evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
-            evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
             getNextQuestion();
             
             console.log(questionIndex);
@@ -131,8 +129,8 @@ function getNextQuestion() {
     } else {
         entireQuestionElement.setAttribute('class', 'hide-me');
         console.log('DONE');
-        evaluateChoiceIncorrect.removeAttribute('class', 'correct-eval');
-        evaluateChoiceIncorrect.removeAttribute('class', 'incorrect-eval');
+        evaluateChoice.removeAttribute('class', 'correct-eval');
+        evaluateChoice.removeAttribute('class', 'incorrect-eval');
         displayFinalPage.setAttribute('class', 'enter-info');
 
         finalScore.innerHTML = 'You Score: ' + timeLeft;
