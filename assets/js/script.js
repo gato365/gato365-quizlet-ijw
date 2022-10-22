@@ -77,6 +77,9 @@ function startQuiz() {
 
 function timerFunction() {
     timeLeft--;
+    if (timeLeft <= 0) {
+        timeLeft = 0
+    }
     timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
 }
 
@@ -95,19 +98,19 @@ function getNextQuestion() {
 
 
 
-    if (questionIndex < (totalQuesNum-1)) {
+    if (questionIndex <= (totalQuesNum - 1) & timeLeft > 0) {
 
         // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
-            
-            
-            
+
+
+
             evaluateChoice.setAttribute('class', 'evaluationOfResponse');
             evaluateChoice.innerHTML = 'Correct';
             questionIndex++;
             selectedChoice = ' ';
             getNextQuestion();
-            console.log(questionIndex);
+
 
 
 
@@ -116,17 +119,18 @@ function getNextQuestion() {
 
             // Incorrect Answer
         } else if (selectedChoice != ' ' & selectedChoice != currentQuestion.rightAnswer) {
-          
+
             evaluateChoice.setAttribute('class', 'evaluationOfResponse');
             evaluateChoice.innerHTML = 'Incorrect';
             timeLeft = timeLeft - 10;
             questionIndex++;
             selectedChoice = ' ';
             getNextQuestion();
-            
+
             console.log(questionIndex);
         }
     } else {
+       
         entireQuestionElement.setAttribute('class', 'hide-me');
         console.log('DONE');
         evaluateChoice.removeAttribute('class', 'correct-eval');
@@ -134,6 +138,9 @@ function getNextQuestion() {
         displayFinalPage.setAttribute('class', 'enter-info');
 
         finalScore.innerHTML = 'You Score: ' + timeLeft;
+
+        timeLeft = 0;
+        timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
     }
 
     // Tasks:
