@@ -115,19 +115,19 @@ function timerFunction() {
 
 function getNextQuestion() {
 
+    console.log(questionIndex);
+    if (questionIndex < totalQuesNum & timeLeft > 0) {
+        // Place Question in HTML code
+        currentQuestion = questionsList[questionIndex];
+        stemOfQuestionElement.innerHTML = currentQuestion.question;
+        choice0Element.innerHTML = '1. ' + currentQuestion.choices[0];
+        choice1Element.innerHTML = '2. ' + currentQuestion.choices[1];
+        choice2Element.innerHTML = '3. ' + currentQuestion.choices[2];
+        choice3Element.innerHTML = '4. ' + currentQuestion.choices[3];
 
-    // Place Question in HTML code
-    currentQuestion = questionsList[questionIndex];
-    stemOfQuestionElement.innerHTML = currentQuestion.question;
-    choice0Element.innerHTML = '1. ' + currentQuestion.choices[0];
-    choice1Element.innerHTML = '2. ' + currentQuestion.choices[1];
-    choice2Element.innerHTML = '3. ' + currentQuestion.choices[2];
-    choice3Element.innerHTML = '4. ' + currentQuestion.choices[3];
 
+        // Proceed to Next Question
 
-
-    // Proceed to Next Question
-    if (questionIndex < totalQuesNum  & timeLeft > 0) {
 
         // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
@@ -148,11 +148,11 @@ function getNextQuestion() {
             selectedChoice = ' ';
             getNextQuestion();
 
-            console.log(questionIndex);
+
         }
         // Quiz is Over
-    } else {
-       
+    } else  {
+
         entireQuestionElement.setAttribute('class', 'hide-me');
         console.log('DONE');
         evaluateChoice.removeAttribute('class', 'correct-eval');
