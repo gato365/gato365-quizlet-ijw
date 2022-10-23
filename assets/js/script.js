@@ -33,7 +33,7 @@ var questionsList = [
 let totalQuesNum = questionsList.length;
 var startQuizButton = document.querySelector("#start-quiz");
 startQuizButton.onclick = startQuiz;
-var submitQuiz= document.querySelector("#submit-quiz");
+var submitQuiz = document.querySelector("#submit-quiz");
 // submitQuizButton.onclick = submitQuiz;
 var timeLeftEL = document.querySelector('#timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
@@ -54,6 +54,7 @@ var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
 var highScorePage = document.querySelector(".high-score-containter");
 
+var inputInitials =
 
 
 
@@ -82,7 +83,7 @@ function startQuiz() {
     // Populate Next Question
     getNextQuestion();
 
-    
+
 }
 
 
@@ -98,9 +99,12 @@ function startQuiz() {
 // -----------------Function Definitions--------------------
 submitQuiz.addEventListener("click", function () {
     console.log('Submit Quiz');
-      // When submit button is hit
-      displayFinalPage.setAttribute('class', 'hide-me');
-      highScorePage.removeAttribute('class','hide-me');
+    // When submit button is hit
+    displayFinalPage.setAttribute('class', 'hide-me');
+    highScorePage.removeAttribute('class', 'hide-me');
+
+
+
 });
 
 // -----------------Function Definitions--------------------
@@ -149,7 +153,7 @@ function getNextQuestion() {
         choice3Element.innerHTML = '4. ' + currentQuestion.choices[3];
 
 
-      
+
 
         // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
@@ -173,7 +177,7 @@ function getNextQuestion() {
 
         }
         // Quiz is Over
-    } else  {
+    } else {
 
         entireQuestionElement.setAttribute('class', 'hide-me');
         console.log('DONE');
@@ -185,6 +189,22 @@ function getNextQuestion() {
 
         timeLeft = 0;
         timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
+
+
+        // Store User info 
+        console.log(window.localStorage);
+
+
+
+        localStorage.setItem('initials','XX'   );
+        localStorage.setItem('score', 22 );
+
+        // -- To Clear Data
+        // window.localStorage.clear();
+
+        //-- TO Remove Data
+        window.localStorage.removeItem("initials");
+
     }
 }
 
