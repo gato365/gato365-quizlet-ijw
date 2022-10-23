@@ -33,6 +33,8 @@ var questionsList = [
 let totalQuesNum = questionsList.length;
 var startQuizButton = document.querySelector("#start-quiz");
 startQuizButton.onclick = startQuiz;
+var submitQuizButton = document.querySelector("#submit-quiz");
+// submitQuizButton.onclick = submitQuiz;
 var timeLeftEL = document.querySelector('#timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
 var entireQuestionElement = document.querySelector('.entire-question');
@@ -80,10 +82,26 @@ function startQuiz() {
     // Populate Next Question
     getNextQuestion();
 
-    // WHen submit button is hit
-    displayFinalPage.setAttribute('class', 'hide-me');
-    highScorePage.removeAttribute('class','hide-me');
+    
 }
+
+
+// -----------------Function Definitions--------------------
+// Author: Immanuel Williams PhD
+// Date Created: 10/22/2022
+// Date Modified: 10/22/2022
+// Name: timerFunction
+// Purpose: Countdown Timer
+// Input: NA
+// Output: NA
+// Notes: Output changes a global variable
+// -----------------Function Definitions--------------------
+// submitQuiz.addEventListener("click", function () {
+//     console.log('Submit Quiz');
+//       // When submit button is hit
+//       displayFinalPage.setAttribute('class', 'hide-me');
+//       highScorePage.removeAttribute('class','hide-me');
+// });
 
 // -----------------Function Definitions--------------------
 // Author: Immanuel Williams PhD
