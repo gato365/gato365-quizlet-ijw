@@ -33,7 +33,7 @@ var questionsList = [
 let totalQuesNum = questionsList.length;
 var startQuizButton = document.querySelector("#start-quiz");
 startQuizButton.onclick = startQuiz;
-var submitQuizButton = document.querySelector("#submit-quiz");
+var submitQuiz= document.querySelector("#submit-quiz");
 // submitQuizButton.onclick = submitQuiz;
 var timeLeftEL = document.querySelector('#timer-count');
 var startDescriptionElement = document.querySelector('.first-screen-descrip');
@@ -96,12 +96,12 @@ function startQuiz() {
 // Output: NA
 // Notes: Output changes a global variable
 // -----------------Function Definitions--------------------
-// submitQuiz.addEventListener("click", function () {
-//     console.log('Submit Quiz');
-//       // When submit button is hit
-//       displayFinalPage.setAttribute('class', 'hide-me');
-//       highScorePage.removeAttribute('class','hide-me');
-// });
+submitQuiz.addEventListener("click", function () {
+    console.log('Submit Quiz');
+      // When submit button is hit
+      displayFinalPage.setAttribute('class', 'hide-me');
+      highScorePage.removeAttribute('class','hide-me');
+});
 
 // -----------------Function Definitions--------------------
 // Author: Immanuel Williams PhD
@@ -149,8 +149,7 @@ function getNextQuestion() {
         choice3Element.innerHTML = '4. ' + currentQuestion.choices[3];
 
 
-        // Proceed to Next Question
-
+      
 
         // Correct Answer
         if (selectedChoice == currentQuestion.rightAnswer) {
