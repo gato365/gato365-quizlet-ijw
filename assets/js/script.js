@@ -54,7 +54,7 @@ var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
 var highScorePage = document.querySelector(".high-score-containter");
 
-var inputInitials =
+
 
 
 
