@@ -3,27 +3,47 @@
 
 <head>
     <style>
-        input{
+        input button {
             padding: 7px;
             height: 40px;
         }
 
+        fieldset {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
 <body>
 
-<fieldset>
-    <legend>Insert Data</legend>
-    <input id = "inpKey" type = "text" placeholder="Enter Key..."> 
-    <input id = "inpValue" type = "text" placeholder="Enter Value..."> 
-    <button type="button" id = "btnInsert">Insert</button>
-</fieldset>
+    <fieldset>
+        <legend>Insert Data</legend>
+        <input id="inpKey" type="text" placeholder="Enter Key...">
+        <input id="inpValue" type="text" placeholder="Enter Value...">
+        <button type="button" id="btnInsert">Insert</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Local Storage</legend>
+        <div id="lsOutput"></div>
+    </fieldset>
 
 
 </body>
 <script>
+    const inpKey = document.getElementById('inpKey');
+    const inpValue = document.getElementById('inpValue');
+    const btnInsert = document.getElementById('btnInsert');
+    const lsOutput = document.getElementById('lsOutput');
 
+
+    btnInsert.onclick = function(){
+        const key = inpKey.value;
+        const value = inpValue.value;
+
+        console.log(key);
+        console.log(value);
+    }
 </script>
 
 </html>
