@@ -87,6 +87,9 @@ function startQuiz() {
 }
 
 
+
+
+
 // -----------------Function Definitions--------------------
 // Author: Immanuel Williams PhD
 // Date Created: 10/22/2022
@@ -103,7 +106,21 @@ submitQuiz.addEventListener("click", function () {
     displayFinalPage.setAttribute('class', 'hide-me');
     highScorePage.removeAttribute('class', 'hide-me');
 
+    enterInitial = document.getElementById('enter-int-info').value;
 
+
+    var userScore = {
+        initial: enterInitial,
+        score: timeLeft
+    }
+
+ 
+    localStorage.setItem('user', JSON.stringify(userScore));
+    
+    // Display Board
+    //var info = localStorage.getItem('user');
+    //JSON.parse(info);
+    // innerhtml
 
 });
 
@@ -191,21 +208,14 @@ function getNextQuestion() {
         timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
 
 
-        enterInitial = document.getElementById('enter-int-info');
-
-        // Store User info 
-        console.log(window.localStorage);
+  
+        
 
 
 
-        localStorage.setItem('initials','XX'   );
-        localStorage.setItem('score', 22 );
 
-        // -- To Clear Data
-        // window.localStorage.clear();
 
-        //-- TO Remove Data
-        window.localStorage.removeItem("initials");
+   
 
     }
 }
@@ -239,10 +249,6 @@ choice3Element.addEventListener("click", function () {
 
 
 
-var userScore = {
-    initial: '',
-    score: '',
-}
 
 
 
