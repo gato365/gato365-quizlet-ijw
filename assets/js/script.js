@@ -191,6 +191,8 @@ function getNextQuestion() {
         timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
 
 
+        enterInitial = document.getElementById('enter-int-info');
+
         // Store User info 
         console.log(window.localStorage);
 
@@ -237,7 +239,10 @@ choice3Element.addEventListener("click", function () {
 
 
 
-
+var userScore = {
+    initial: '',
+    score: '',
+}
 
 
 
