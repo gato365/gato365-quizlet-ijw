@@ -45,6 +45,7 @@ var choice0Element = document.querySelector('#choice1');
 var choice1Element = document.querySelector('#choice2');
 var choice2Element = document.querySelector('#choice3');
 var choice3Element = document.querySelector('#choice4');
+var highScoreList = document.querySelector('#high-score-list');
 var timerId;
 var timeLeft = 60;
 var currentQuestion;
@@ -118,9 +119,9 @@ submitQuiz.addEventListener("click", function () {
     localStorage.setItem('user', JSON.stringify(userScore));
     
     // Display Board
-    //var info = localStorage.getItem('user');
-    //JSON.parse(info);
-    // innerhtml
+    var info = localStorage.getItem('user');
+    var infoUser = JSON.parse(info);
+    highScoreList.innerHTML = infoUser;
 
 });
 
