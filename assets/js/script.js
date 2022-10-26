@@ -25,9 +25,7 @@ var questionsList = [
         'question': 'A very useful tool used during development and debugging for printing content to the debugger is:',
         'choices': ['JavaScript', 'terminal/bash', 'for loops', 'console.log'],
         'rightAnswer': 'console.log'
-    },
-
-
+    }
 ]
 // Define Variables used in script
 let totalQuesNum = questionsList.length;
@@ -54,7 +52,7 @@ var selectedChoice = ' ';
 var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
 var highScorePage = document.querySelector(".high-score-containter");
-
+var finalScoreDisplay; 
 
 
 
@@ -112,16 +110,17 @@ submitQuiz.addEventListener("click", function () {
 
     var userScore = {
         initial: enterInitial,
-        score: timeLeft
-    }
+        score: finalScoreDisplay
+    };
 
- 
+    localStorage.clear();
     localStorage.setItem('user', JSON.stringify(userScore));
     
     // Display Board
     var info = localStorage.getItem('user');
     var infoUser = JSON.parse(info);
-    highScoreList.innerHTML = infoUser;
+    console.log(infoUser);
+    highScoreList.innerHTML = infoUser.initial;
 
 });
 
@@ -205,6 +204,7 @@ function getNextQuestion() {
 
         finalScore.innerHTML = 'You Score: ' + timeLeft;
 
+        finalScoreDisplay = timeLeft;
         timeLeft = 0;
         timeLeftEL.innerHTML = 'Time Remaining: ' + timeLeft;
 
