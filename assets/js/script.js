@@ -52,6 +52,7 @@ var selectedChoice = ' ';
 var evaluateChoice = document.querySelector(".evaluationOfResponse");
 var finalScore = document.querySelector("#final-score");
 var highScorePage = document.querySelector(".high-score-containter");
+var clearhighScorePage = document.querySelector('');
 var finalScoreDisplay; 
 
 
@@ -120,7 +121,7 @@ submitQuiz.addEventListener("click", function () {
     var info = localStorage.getItem('user');
     var infoUser = JSON.parse(info);
     console.log(infoUser);
-    highScoreList.innerHTML = infoUser.initial;
+    highScoreList.innerHTML = 'Initials:' + infoUser.initial + ' - ' + infoUser.score;
 
 });
 
@@ -248,6 +249,16 @@ choice3Element.addEventListener("click", function () {
 
 
 
+
+clearhighScorePage.addEventListener("click", function () {
+
+});
+
+// 0. Clear HIgh Score List from button
+// 1. Ability to Go back from High Score page to  ENter Initials
+// 2. Ability to Go back from High Score page to Home Screen
+// 3. Click on the High Score on any page ____
+// 4. CLean up code names
 
 
 
